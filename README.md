@@ -29,3 +29,11 @@ ansible-playbook playbook.yaml
 - Ignore the SSH error – added a config to ansible.cfg
 - Check if the directory exists before distributing the script
 - Escalate privileges if needed
+
+
+Daily WarHammer Qoute
+```
+The burden of immortality is the price of duty.
+
+  Venerable Brother Atheos, Ultramarines
+```
