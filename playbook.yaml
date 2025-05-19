@@ -1,13 +1,20 @@
 - hosts: all
   remote_user: docker
+  become: yes
 
   tasks:
-    - name: Copy a script to node1
+    - name: Check if directory /tmp exists
+      file:
+        path: /tmp
+        state: directory
+        mode: '0755'
+
+    - name: Copy a script to all slaves
       copy:
-        src: /home/ansible/TEST/shaul_and_asaf_script.sh
-        dest: /home/docker/shaul_and_asaf_script.sh
+        src: ./automation/script.sh
+        dest: /tmp/hello.sh
         mode: '0755'
 
     - name: Run the script on a remote host
-      shell: /home/docker/shaul_and_asaf_script.sh
+      shell: /tmp/hello.sh
 
