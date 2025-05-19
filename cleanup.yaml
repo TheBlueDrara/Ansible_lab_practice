@@ -1,7 +1,8 @@
-- hosts: dev
+- hosts: all
   remote_user: docker
+  become: yes
 
   tasks:
-    - name: Delete all files
-      shell: rm -rf /home/docker/*
+    - name: Delete the script from all slaves
+      shell: rm -rf /tmp/hello.sh
       
