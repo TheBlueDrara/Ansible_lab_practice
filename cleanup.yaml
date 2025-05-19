@@ -1,0 +1,7 @@
+- hosts: dev
+  remote_user: docker
+
+  tasks:
+    - name: Delete all files
+      shell: rm -rf /home/docker/*
+      

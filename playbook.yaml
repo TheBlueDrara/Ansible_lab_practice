@@ -1,0 +1,13 @@
+- hosts: all
+  remote_user: docker
+
+  tasks:
+    - name: Copy a script to node1
+      copy:
+        src: /home/ansible/TEST/shaul_and_asaf_script.sh
+        dest: /home/docker/shaul_and_asaf_script.sh
+        mode: '0755'
+
+    - name: Run the script on a remote host
+      shell: /home/docker/shaul_and_asaf_script.sh
+
